@@ -2,24 +2,24 @@
 
 This document explains how to install and run the **AI-Based Driver Alertness Monitoring System**.
 
-The system is implemented using Python and Streamlit and can run on a local computer with a webcam.
+The system is implemented using **Python** and **Streamlit** and can run on a local computer with a webcam.
 
 ---
 
 # 1. System Requirements
 
-Minimum requirements:
+### Minimum Requirements
 
-- Python 3.9 or higher
-- Webcam or smartphone camera
-- Internet connection (optional for GPS features)
-- Modern web browser (Chrome recommended)
+* Python **3.9 or higher**
+* Webcam or smartphone camera
+* Internet connection *(optional for GPS features)*
+* Modern web browser *(Chrome recommended)*
 
-Recommended:
+### Recommended
 
-- Python 3.10+
-- 8 GB RAM
-- GPU optional (not required)
+* Python **3.10+**
+* **8 GB RAM**
+* **GPU optional** *(not required)*
 
 ---
 
@@ -30,172 +30,195 @@ Clone the project repository from GitHub.
 ```bash
 git clone https://github.com/YOUR_USERNAME/Adaptive_DriverAlterness.git
 cd Adaptive_DriverAlterness
-3. Create Virtual Environment (Recommended)
+```
+
+---
+
+# 3. Create Virtual Environment (Recommended)
 
 Create a Python virtual environment.
 
-Windows:
+### Windows
 
+```bash
 python -m venv .venv
+```
 
 Activate the environment:
 
+```bash
 .venv\Scripts\activate
+```
 
-Mac / Linux:
+### Mac / Linux
 
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-4. Install Dependencies
+```
+
+---
+
+# 4. Install Dependencies
 
 Install all required libraries using the requirements file.
 
+```bash
 pip install -r requirements.txt
+```
 
 This installs:
 
-Streamlit
+* Streamlit
+* OpenCV
+* MediaPipe
+* Streamlit WebRTC
+* NumPy
+* Pandas
+* Plyer
+* SciPy
+* Other dependencies
 
-OpenCV
+---
 
-MediaPipe
-
-Streamlit WebRTC
-
-NumPy
-
-Pandas
-
-Plyer
-
-SciPy
-
-Other dependencies
-
-5. Run the Application
+# 5. Run the Application
 
 Start the Streamlit application.
 
+```bash
 streamlit run src/app.py
+```
 
 After running this command, Streamlit will start a local server.
 
 You will see something like:
 
+```
 Local URL: http://localhost:8501
+```
 
 Open this URL in your browser.
 
-6. Starting Camera Monitoring
+---
 
-Open the dashboard in your browser.
+# 6. Starting Camera Monitoring
 
-Click the START button in the camera section.
-
-Allow camera permissions when prompted.
+1. Open the dashboard in your browser.
+2. Click the **START** button in the camera section.
+3. Allow camera permissions when prompted.
 
 The system will begin analyzing the video feed for:
 
-Eye closure
+* Eye closure
+* Yawning
+* Driver fatigue
 
-Yawning
+---
 
-Driver fatigue
+# 7. GPS Location and Speed Monitoring
 
-7. GPS Location and Speed Monitoring
+The system can access browser **geolocation data**.
 
-The system can access browser geolocation data.
+### Steps
 
-Steps:
+1. Allow **location access** in the browser.
+2. The dashboard will display:
 
-Allow location access in the browser.
+* Current GPS location
+* Vehicle speed
+* Overspeed alerts
 
-The dashboard will display:
+**Note:**
+GPS speed may not work on desktop systems without movement. For demonstration purposes, **manual overrides are available in the sidebar**.
 
-Current GPS location
+---
 
-Vehicle speed
+# 8. Simulated Smartwatch Health Monitoring
 
-Overspeed alerts
-
-Note:
-
-GPS speed may not work on desktop systems without movement. For demonstration purposes, manual overrides are available in the sidebar.
-
-8. Simulated Smartwatch Health Monitoring
-
-The system includes a simulated wearable health monitor.
+The system includes a **simulated wearable health monitor**.
 
 The dashboard displays:
 
-Heart Rate
-
-Blood Oxygen Level (SpO₂)
+* **Heart Rate**
+* **Blood Oxygen Level (SpO₂)**
 
 These values are simulated to demonstrate integration with wearable devices.
 
-9. Manual Testing Controls
+---
 
-The dashboard includes testing controls in the sidebar.
+# 9. Manual Testing Controls
+
+The dashboard includes **testing controls in the sidebar**.
 
 These allow you to simulate different scenarios such as:
 
-Driver drowsiness
+* Driver drowsiness
+* Yawning detection
+* Overspeed condition
+* Low SpO₂ levels
 
-Yawning detection
+These controls are useful for **demonstration purposes**.
 
-Overspeed condition
+---
 
-Low SpO₂ levels
+# 10. Running the System on a Mobile Device (Optional)
 
-These controls are useful for demonstration purposes.
-
-10. Running the System on a Mobile Device (Optional)
-
-To access the dashboard from a smartphone, you can use ngrok.
+To access the dashboard from a smartphone, you can use **ngrok**.
 
 Install ngrok and run:
 
+```bash
 ngrok http 8501
+```
 
 This will generate a public URL such as:
 
+```
 https://xxxx.ngrok-free.app
+```
 
-Open this link on your smartphone to access the dashboard.
+Open this link on your **smartphone** to access the dashboard.
 
-11. Troubleshooting
+---
 
-Camera not detected:
+# 11. Troubleshooting
 
-Check camera permissions in your browser
+### Camera Not Detected
 
-Try using Google Chrome
+* Check camera permissions in your browser
+* Try using **Google Chrome**
+* Ensure no other application is using the camera
 
-Ensure no other application is using the camera
+### Dependencies Installation Issues
 
-Dependencies installation issues:
+Update **pip** and retry installation.
 
-Update pip and retry installation.
-
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-12. Stopping the Application
+```
+
+---
+
+# 12. Stopping the Application
 
 Press:
 
+```
 CTRL + C
+```
 
 in the terminal to stop the Streamlit server.
 
-13. Project Documentation
+---
 
-Additional documentation is available in the docs folder.
+# 13. Project Documentation
 
+Additional documentation is available in the **docs** folder.
+
+```
 docs/system_architecture.md
 docs/methodology.md
+```
 
-These documents explain the system design and implementation in detail.
-
-
----
+These documents explain the **system design and implementation in detail**.
